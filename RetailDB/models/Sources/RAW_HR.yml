@@ -1,0 +1,8 @@
+
+sources:
+- name: RAW_HR
+  database: RetailDB_DEV
+  schema: RAW_HR
+  tables:
+      - name: STORES
+      - name: EMPLOYEES

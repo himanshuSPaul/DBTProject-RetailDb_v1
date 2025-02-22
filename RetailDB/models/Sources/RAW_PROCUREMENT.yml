@@ -1,0 +1,8 @@
+sources:
+- name: RAW_PROCUREMENT
+  database: RetailDB_DEV
+  schema: RAW_PROCUREMENT
+  tables:
+      - name: SUPPLIERS
+      - name: PURCHASEORDERS
+      - name: PURCHASEORDERDETAILS

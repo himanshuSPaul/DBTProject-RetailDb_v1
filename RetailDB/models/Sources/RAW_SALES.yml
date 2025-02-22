@@ -1,0 +1,8 @@
+sources:
+- name: RAW_SALES
+  database: RETAILDB_DEV
+  schema: RAW_SALES
+  tables:
+      - name: CUSTOMERS
+      - name: SALES
+      - name: SALEDETAILS
