@@ -10,7 +10,7 @@ WITH KPIs AS (
     TotalMargin,
     MarginPercentage,
     InventoryTurnoverRatio
-  FROM GOLD_ProductKPIs_Monthly
+  FROM {{ ref ('GOLD_Monthly_ProductKPIs')}}
 ),
 Ranked AS (
   SELECT 

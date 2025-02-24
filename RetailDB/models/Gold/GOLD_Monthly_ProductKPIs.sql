@@ -15,4 +15,4 @@ SELECT
     WHEN COALESCE(ppm.TotalStock, 0) = 0 THEN NULL
     ELSE ROUND(COALESCE(ppm.TotalSalesRevenue, 0) / ppm.TotalStock, 2)
   END AS InventoryTurnoverRatio
-FROM SILVER_ProductPerformance_Monthly ppm
+FROM SILVER_Monthly_ProductPerformance ppm

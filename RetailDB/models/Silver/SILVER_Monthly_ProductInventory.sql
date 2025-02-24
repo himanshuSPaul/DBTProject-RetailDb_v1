@@ -4,5 +4,5 @@ SELECT
   DATE_TRUNC('MONTH', LastUpdated) AS MonthStart,
   SUM(StockQuantity) AS TotalStock,
   MAX(LastUpdated) AS LastInventoryUpdate
-FROM BRONZE_Inventory
+FROM {{ ref('BRONZE_Inventory')}}
 GROUP BY ProductID, DATE_TRUNC('MONTH', LastUpdated)

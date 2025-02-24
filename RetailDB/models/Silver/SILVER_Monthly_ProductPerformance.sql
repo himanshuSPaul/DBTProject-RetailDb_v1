@@ -1,4 +1,4 @@
-CREATE OR REPLACE VIEW SILVER_ProductPerformance_Monthly AS
+--CREATE OR REPLACE VIEW SILVER_ProductPerformance_Monthly AS
 SELECT 
   bp.ProductID,
   bp.ProductName,
@@ -10,12 +10,12 @@ SELECT
   spp.TotalUnitsPurchased,
   spp.TotalPurchaseCost,
   spi.TotalStock
-FROM BRONZE_Products bp
-LEFT JOIN SILVER_ProductSales_Monthly sps
+FROM {{ ref ('BRONZE_Products')}} bp
+LEFT JOIN {{ ref('SILVER_Monthly_ProductSales')}} sps
   ON bp.ProductID = sps.ProductID
-LEFT JOIN SILVER_ProductPurchases_Monthly spp
+LEFT JOIN {{ ref('SILVER_Monthly_ProductPurchases')}} spp
   ON bp.ProductID = spp.ProductID
   AND sps.MonthStart = spp.MonthStart
-LEFT JOIN SILVER_ProductInventory_Monthly spi
+LEFT JOIN {{ ref('SILVER_Monthly_ProductInventory')}} spi
   ON bp.ProductID = spi.ProductID
   AND sps.MonthStart = spi.MonthStart
