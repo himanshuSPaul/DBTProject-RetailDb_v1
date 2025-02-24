@@ -1,3 +1,10 @@
+{{ 
+  config(
+        tags=["CLARMS"]
+        ) 
+}}
+
+
 SELECT 
   TRIM(SaleID) AS SaleID,
   SaleDate,

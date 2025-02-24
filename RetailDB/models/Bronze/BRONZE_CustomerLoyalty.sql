@@ -1,3 +1,10 @@
+{{ 
+  config(
+        tags=["CLARMS"]
+        ) 
+}}
+
+
 SELECT 
   TRIM('LOY_' || LPAD(TO_VARCHAR(ROW_NUMBER() OVER (ORDER BY CustomerID)), 3, '0')) AS LoyaltyID,
   CustomerID,
