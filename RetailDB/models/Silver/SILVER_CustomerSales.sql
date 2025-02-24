@@ -1,5 +1,5 @@
 SELECT 
   CustomerID,
   SUM(TotalAmount) AS TotalSales
-FROM BRONZE_Sales
+FROM {{ref('BRONZE_Sales')}}
 GROUP BY CustomerID

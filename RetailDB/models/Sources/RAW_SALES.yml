@@ -4,5 +4,7 @@ sources:
   schema: RAW_SALES
   tables:
       - name: CUSTOMERS
+        tags: ["CLARMS"]
       - name: SALES
+        tags: ["CLARMS"]
       - name: SALEDETAILS

@@ -4,8 +4,8 @@ SELECT
   cl.PointsBalance,
   cl.MembershipLevel,
   cs.TotalSales
-FROM {{'BRONZE_Customers'}} c
-LEFT JOIN {{'BRONZE_CustomerLoyalty'}} cl 
+FROM {{ref('BRONZE_Customer')}} c
+LEFT JOIN {{ref('BRONZE_CustomerLoyalty')}} cl 
 ON c.CustomerID = cl.CustomerID
-LEFT JOIN {{'SILVER_CustomerSales'}} cs 
+LEFT JOIN {{ref('SILVER_CustomerSales')}} cs 
 ON c.CustomerID = cs.CustomerID
